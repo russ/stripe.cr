@@ -19,6 +19,8 @@ class Stripe::Charge
     customer = customer.as(Customer).id if customer.is_a?(Customer)
 
     case source
+    when String
+      # NOOP
     when Token, PaymentMethods::Card, PaymentMethods::BankAccount
       source = source.not_nil!.id
     when Nil

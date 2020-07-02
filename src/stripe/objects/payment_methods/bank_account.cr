@@ -23,6 +23,8 @@ class Stripe::PaymentMethods::BankAccount
   getter country : String?
   getter currency : String?
   getter fingerprint : String?
+  getter exp_month : UInt8?
+  getter exp_year : UInt16?
   getter last4 : String?
   getter routing_number : String?
 

@@ -17,6 +17,8 @@ class Stripe::Customer
     expand : Array(String)? = nil
   ) : Customer forall T, U
     case source
+    when String
+      # NOOP
     when Token, PaymentMethods::Card, PaymentMethods::BankAccount
       source = source.not_nil!.id
     when Nil
